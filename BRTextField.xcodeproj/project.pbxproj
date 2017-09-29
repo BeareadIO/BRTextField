@@ -13,6 +13,7 @@
 		282AD1741F7A849900C5C0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282AD1731F7A849900C5C0E3 /* Assets.xcassets */; };
 		282AD1771F7A849900C5C0E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282AD1751F7A849900C5C0E3 /* LaunchScreen.storyboard */; };
 		282AD17A1F7A849900C5C0E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282AD1791F7A849900C5C0E3 /* main.m */; };
+		282AD1821F7A870200C5C0E3 /* BRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 282AD1811F7A870200C5C0E3 /* BRTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		282AD1761F7A849900C5C0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282AD1781F7A849900C5C0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282AD1791F7A849900C5C0E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		282AD1801F7A870200C5C0E3 /* BRTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTextField.h; sourceTree = "<group>"; };
+		282AD1811F7A870200C5C0E3 /* BRTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				282AD16B1F7A849900C5C0E3 /* AppDelegate.m */,
 				282AD16D1F7A849900C5C0E3 /* ViewController.h */,
 				282AD16E1F7A849900C5C0E3 /* ViewController.m */,
+				282AD1801F7A870200C5C0E3 /* BRTextField.h */,
+				282AD1811F7A870200C5C0E3 /* BRTextField.m */,
 				282AD1701F7A849900C5C0E3 /* Main.storyboard */,
 				282AD1731F7A849900C5C0E3 /* Assets.xcassets */,
 				282AD1751F7A849900C5C0E3 /* LaunchScreen.storyboard */,
@@ -143,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				282AD16F1F7A849900C5C0E3 /* ViewController.m in Sources */,
+				282AD1821F7A870200C5C0E3 /* BRTextField.m in Sources */,
 				282AD17A1F7A849900C5C0E3 /* main.m in Sources */,
 				282AD16C1F7A849900C5C0E3 /* AppDelegate.m in Sources */,
 			);
