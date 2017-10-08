@@ -588,7 +588,7 @@
         mapping = @{
                     @(BRTextFieldStyleDefault)          : @"configDefaultStyle",
                     @(BRTextFieldStyleClose)            : @"configCloseStyle",
-                    @(BRTextFieldStylePassworld)        : @"configPasswordStyle",
+                    @(BRTextFieldStylePassword)        : @"configPasswordStyle",
                     @(BRTextFieldStyleVerifyCode)       : @"configVerifyCodeStyle",
                     @(BRTextFieldStyleInternational)    : @"configInternationalStyle"
                     };

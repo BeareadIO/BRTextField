@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, BRTextFieldStyle) {
     BRTextFieldStyleDefault,
     BRTextFieldStyleClose,
-    BRTextFieldStylePassworld,
+    BRTextFieldStylePassword,
     BRTextFieldStyleVerifyCode,
     BRTextFieldStyleInternational,
 };
