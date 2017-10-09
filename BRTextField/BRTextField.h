@@ -26,6 +26,8 @@ IB_DESIGNABLE
  */
 @protocol BRTextFieldDelegate;
 @interface BRTextField : UIView
+
+@property (nullable, nonatomic, weak)   id<UITextFieldDelegate, BRTextFieldDelegate> delegate;             // default is nil. weak reference
 /**
  Whether Need Underline. default is YES. line width is 1;
  */
@@ -55,9 +57,22 @@ IB_DESIGNABLE
 @property (nullable, nonatomic, strong) IBInspectable NSString   *floatText; // default is equal placeholder.
 @property (nullable, nonatomic, strong) IBInspectable UIColor    *floatColor; // default
 @property (nullable, nonatomic, strong) UIFont                   *floatFont;   // default is nil. use system font 10 pt
-@property (nullable, nonatomic, weak)   id<UITextFieldDelegate, BRTextFieldDelegate> delegate;             // default is nil. weak reference
-@property (nullable, nonatomic, strong) NSString                *supplyText; // default is nil.
-@property (assign, nonatomic, getter=isSupplyEnabled) BOOL      supplyEnabled;
+/**
+ Custom Left or Right View Properties
+ */
+
+/**
+ Supply Text Color
+ */
+@property (nullable, nonatomic, weak) IBInspectable  UIColor    *supplyColor;
+/**
+ Supply Text Content
+ */
+@property (nullable, nonatomic, strong)IBInspectable  NSString                *supplyText; // default is nil.
+/**
+ Supply View Enabled
+ */
+@property (assign, nonatomic, getter=isSupplyEnabled)IBInspectable  BOOL      supplyEnabled;
 @end
 
 @protocol BRTextFieldDelegate <NSObject>

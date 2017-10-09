@@ -26,19 +26,13 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.defaultField.style = BRTextFieldStyleDefault;
     self.closeField.style = BRTextFieldStyleClose;
-    self.passwordField.style = BRTextFieldStylePassworld;
+    self.passwordField.style = BRTextFieldStylePassword;
     self.verifyField.style = BRTextFieldStyleVerifyCode;
     self.internationalField.style = BRTextFieldStyleInternational;
-    self.verifyField.delegate = self;
 }
 
 - (void)textFieldDidClickSupplyView:(BRTextField *)textField {
-    self.verifyField.supplyText = @"59 s";
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
+//    You Can do What you want to change textField UI
 }
 
 @end

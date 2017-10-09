@@ -136,8 +136,7 @@
 
 - (void)updateSupplyView {
     if (self.style == BRTextFieldStyleInternational) {
-        [self resetModules];
-        [self configInternationalStyle];
+        [self updateStyle];
     } else if (self.style == BRTextFieldStyleVerifyCode) {
         self.lblSupply.text = self.supplyText;
     }
@@ -228,7 +227,11 @@
     } else {
         self.lblSupply.font = [UIFont systemFontOfSize:12];
     }
-    self.lblSupply.textColor = [UIColor colorWithRed:250/255.0 green:112/255.0 blue:136/255.0 alpha:1];
+    if (self.supplyColor) {
+        self.lblSupply.textColor = self.supplyColor;
+    } else {
+        self.lblSupply.textColor = [UIColor colorWithRed:250/255.0 green:112/255.0 blue:136/255.0 alpha:1];
+    }
     CGSize lblSize = [self.lblSupply sizeThatFits:CGSizeMake(self.bounds.size.width, self.bounds.size.height)];
     CGFloat totalWidth = self.btnClose.bounds.size.width + lblSize.width + self.verticalSepLine.bounds.size.width + ModuleGap * 2;
     self.viewVerifyCode = [[UIView alloc] initWithFrame:CGRectMake(0, 0, totalWidth, self.bounds.size.height)];
@@ -276,7 +279,11 @@
     } else {
         self.lblSupply.font = [UIFont systemFontOfSize:12];
     }
-    self.lblSupply.textColor = [UIColor colorWithRed:46/255.0 green:159/255.0 blue:1 alpha:1];
+    if (self.supplyColor) {
+        self.lblSupply.textColor = self.supplyColor;
+    } else {
+        self.lblSupply.textColor = [UIColor colorWithRed:46/255.0 green:159/255.0 blue:1 alpha:1];
+    }
     CGSize lblSize = [self.lblSupply sizeThatFits:CGSizeMake(self.bounds.size.width, self.bounds.size.height)];
     CGFloat totalWidth = lblSize.width + self.imgMore.bounds.size.width + self.verticalSepLine.bounds.size.width + 3 * ModuleGap;
     self.viewInternational = [[UIView alloc] initWithFrame:CGRectMake(0, 0, totalWidth, self.bounds.size.height)];
@@ -487,6 +494,11 @@
 - (void)setStyle:(BRTextFieldStyle)style {
     _style = style;
     [self updateStyle];
+}
+
+- (void)setSupplyColor:(UIColor *)supplyColor {
+    _supplyColor = supplyColor;
+    self.lblSupply.textColor = supplyColor;
 }
 
 - (void)setSupplyText:(NSString *)supplyText {
