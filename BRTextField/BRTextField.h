@@ -18,13 +18,14 @@ typedef NS_ENUM(NSUInteger, BRTextFieldStyle) {
     BRTextFieldStyleInternational,
 };
 
+
+@protocol BRTextFieldDelegate;
 IB_DESIGNABLE
 /**
  An object that displays an editable text area in your interface.
  
  It will display an underline and a floating label.
  */
-@protocol BRTextFieldDelegate;
 @interface BRTextField : UIView
 
 @property (nullable, nonatomic, weak)   id<UITextFieldDelegate, BRTextFieldDelegate> delegate;             // default is nil. weak reference
