@@ -29,6 +29,7 @@
 @property (strong, nonatomic) UIView      *viewPassword;
 
 @property (strong, nonatomic) UITapGestureRecognizer *tapSupply;
+@property (strong, nonatomic) NSBundle               *resourceBundle;
 
 @end
 
@@ -542,7 +543,7 @@
 - (UIButton *)btnClose {
     if (!_btnClose) {
         _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnClose setImage:[UIImage imageNamed:@"close_clicked"] forState:UIControlStateNormal];
+        [_btnClose setImage:[UIImage imageNamed:@"close_clicked" inBundle:self.resourceBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
         [_btnClose sizeToFit];
         [_btnClose addTarget:self action:@selector(resetTextField:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -552,8 +553,8 @@
 - (UIButton *)btnSecureEye {
     if (!_btnSecureEye) {
         _btnSecureEye = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_btnSecureEye setImage:[UIImage imageNamed:@"eye_reg"] forState:UIControlStateNormal];
-        [_btnSecureEye setImage:[UIImage imageNamed:@"eye_clicked"] forState:UIControlStateSelected];
+        [_btnSecureEye setImage:[UIImage imageNamed:@"eye_reg" inBundle:self.resourceBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+        [_btnSecureEye setImage:[UIImage imageNamed:@"eye_clicked" inBundle:self.resourceBundle compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
         [_btnSecureEye sizeToFit];
         [_btnSecureEye addTarget:self action:@selector(changeTextFieldSecure:) forControlEvents:UIControlEventTouchUpInside];
         _btnSecureEye.selected = !self.textField.secureTextEntry;
@@ -571,7 +572,7 @@
 
 - (UIImageView *)imgMore {
     if (!_imgMore) {
-        _imgMore = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_arrows_down_b_xs"]];
+        _imgMore = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_arrows_down_b_xs" inBundle:self.resourceBundle compatibleWithTraitCollection:nil]];
     }
     return _imgMore;
 }
@@ -589,6 +590,15 @@
         _tapSupply = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(supplyAction:)];
     }
     return _tapSupply;
+}
+
+- (NSBundle *)resourceBundle {
+    if (!_resourceBundle) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSURL *bundleURL = [[bundle resourceURL] URLByAppendingPathComponent:@"BRTextField.bundle"];
+        _resourceBundle = [NSBundle bundleWithURL:bundleURL];
+    }
+    return _resourceBundle;
 }
 
 #pragma mark - Style Mapping

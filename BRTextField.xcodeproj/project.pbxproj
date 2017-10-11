@@ -29,7 +29,7 @@
 		282AD1791F7A849900C5C0E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282AD1801F7A870200C5C0E3 /* BRTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRTextField.h; sourceTree = "<group>"; };
 		282AD1811F7A870200C5C0E3 /* BRTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRTextField.m; sourceTree = "<group>"; };
-		28CCD7261F8CD33200AC6987 /* BRTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BRTextField.bundle; sourceTree = "<group>"; };
+		28ABB97E1F8DB10E00FAC3AA /* BRTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BRTextField.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +66,9 @@
 				282AD16B1F7A849900C5C0E3 /* AppDelegate.m */,
 				282AD16D1F7A849900C5C0E3 /* ViewController.h */,
 				282AD16E1F7A849900C5C0E3 /* ViewController.m */,
-				28CCD7261F8CD33200AC6987 /* BRTextField.bundle */,
 				282AD1801F7A870200C5C0E3 /* BRTextField.h */,
 				282AD1811F7A870200C5C0E3 /* BRTextField.m */,
+				28ABB97E1F8DB10E00FAC3AA /* BRTextField.bundle */,
 				282AD1701F7A849900C5C0E3 /* Main.storyboard */,
 				282AD1731F7A849900C5C0E3 /* Assets.xcassets */,
 				282AD1751F7A849900C5C0E3 /* LaunchScreen.storyboard */,

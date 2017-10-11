@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BRTextField"
-  s.version      = "1.0.5"
+  s.version      = "1.0.4"
   s.summary      = "BRTextField is bearead custom textfield."
 
   # This description is used to generate tags and improve search results.
@@ -106,7 +106,9 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "BRTextField/BRTextField.bundle"
+  s.resource_bundle = {
+  		'BRTextField' => ['BRTextField/BRTextField.bundle/*.png']
+  }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
