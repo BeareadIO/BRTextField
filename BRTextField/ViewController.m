@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "BRTextField.h"
 
-@interface ViewController ()<BRTextFieldDelegate,UITextFieldDelegate>
+@interface ViewController ()<BRTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet BRTextField *defaultField;
 @property (weak, nonatomic) IBOutlet BRTextField *closeField;
@@ -29,6 +29,7 @@
     self.passwordField.style = BRTextFieldStylePassword;
     self.verifyField.style = BRTextFieldStyleVerifyCode;
     self.internationalField.style = BRTextFieldStyleInternational;
+    self.internationalField.delegate = self;
 }
 
 - (void)textFieldDidClickSupplyView:(BRTextField *)textField {

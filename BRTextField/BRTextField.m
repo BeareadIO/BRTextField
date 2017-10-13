@@ -8,8 +8,8 @@
 
 #import "BRTextField.h"
 
-#define FloatFadeInDuration     0.2
-#define FloatFadeOutDuration    0.3
+#define FloatFadeInDuration     0.3
+#define FloatFadeOutDuration    0.2
 #define ModuleGap               10.f
 
 @interface BRTextField ()
@@ -35,8 +35,6 @@
 
 
 @implementation BRTextField
-
-@dynamic text;
 
 #pragma mark - Init
 
@@ -67,6 +65,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self updateUI];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self updateFrame];
 }
 
 - (void)propertyInit {
@@ -100,11 +103,6 @@
     [self.textField addTarget:self action:@selector(inputDidBegin:) forControlEvents:UIControlEventEditingDidBegin];
     [self.textField addTarget:self action:@selector(inputDidEnd:) forControlEvents:UIControlEventEditingDidEnd];
     [self.textField addTarget:self action:@selector(inputDidEnd:) forControlEvents:UIControlEventEditingDidEnd];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
-}
-
-- (void)deviceOrientationDidChange {
-    [self updateFrame];
 }
 
 - (void)updateFrame {
@@ -172,7 +170,7 @@
 
 //@(BRTextFieldStyleDefault)        : @"configDefaultStyle",
 //@(BRTextFieldStyleClose)          : @"configCloseStyle",
-//@(BRTextFieldStylePassworld)      : @"configPasswordStyle",
+//@(BRTextFieldStylePassword)       : @"configPasswordStyle",
 //@(BRTextFieldStyleVerifyCode)     : @"configVerifyCodeStyle",
 //@(BRTextFieldStyleInternational)  : @"configInternationalStyle"
 
@@ -229,12 +227,12 @@
     if (self.font) {
         self.lblSupply.font = self.font;
     } else {
-        self.lblSupply.font = [UIFont systemFontOfSize:12];
+        self.lblSupply.font = [UIFont systemFontOfSize:17];
     }
     if (self.supplyColor) {
         self.lblSupply.textColor = self.supplyColor;
     } else {
-        self.lblSupply.textColor = [UIColor colorWithRed:250/255.0 green:112/255.0 blue:136/255.0 alpha:1];
+        self.lblSupply.textColor = [UIColor colorWithRed:46/255.0 green:159/255.0 blue:1 alpha:1];
     }
     CGSize lblSize = [self.lblSupply sizeThatFits:CGSizeMake(self.bounds.size.width, self.bounds.size.height)];
     CGFloat totalWidth = self.btnClose.bounds.size.width + lblSize.width + self.verticalSepLine.bounds.size.width + ModuleGap * 2;
@@ -282,7 +280,7 @@
     if (self.font) {
         self.lblSupply.font = self.font;
     } else {
-        self.lblSupply.font = [UIFont systemFontOfSize:12];
+        self.lblSupply.font = [UIFont systemFontOfSize:17];
     }
     if (self.supplyColor) {
         self.lblSupply.textColor = self.supplyColor;
@@ -438,10 +436,6 @@
     }
 }
 
-- (void)setText:(NSString *)text {
-    self.textField.text = text;
-}
-
 - (void)setTextAlignment:(NSTextAlignment)textAlignment {
     _textAlignment = textAlignment;
     self.textField.textAlignment = textAlignment;
@@ -451,20 +445,6 @@
 - (void)setKeyboardType:(UIKeyboardType)keyboardType {
     _keyboardType = keyboardType;
     self.textField.keyboardType = keyboardType;
-}
-
-- (void)setAttributedText:(NSAttributedString *)attributedText {
-    _attributedText = attributedText;
-    self.textField.attributedText = attributedText;
-}
-
-- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder {
-    _attributedPlaceholder = attributedPlaceholder;
-    self.textField.attributedPlaceholder = attributedPlaceholder;
-    if (_floatText == nil) {
-        _floatText = attributedPlaceholder.string;
-        self.lblFloat.text = _floatText;
-    }
 }
 
 - (void)setTextColor:(UIColor *)textColor {
@@ -516,16 +496,12 @@
 }
 
 #pragma mark - Getter
-- (NSString *)text {
-    return self.textField.text;
-}
-
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
         _textField.backgroundColor = [UIColor clearColor];
         _textField.textColor = [UIColor blackColor];
-        _textField.font = [UIFont systemFontOfSize:12];
+        _textField.font = [UIFont systemFontOfSize:17];
     }
     return _textField;
 }
@@ -533,7 +509,7 @@
 - (UILabel *)lblFloat {
     if (!_lblFloat) {
         _lblFloat = [[UILabel alloc] init];
-        _lblFloat.font = [UIFont systemFontOfSize:10];
+        _lblFloat.font = [UIFont systemFontOfSize:15];
         _lblFloat.alpha = 0;
     }
     return _lblFloat;
@@ -542,7 +518,7 @@
 - (UIView *)underlineView {
     if (!_underlineView) {
         _underlineView = [[UIView alloc] init];
-        _underlineView.backgroundColor = [UIColor blackColor];
+        _underlineView.backgroundColor = [UIColor colorWithRed:224/255.0 green:229/255.0 blue:232/255.0 alpha:1];
     }
     return _underlineView;
 }
@@ -617,7 +593,7 @@
         mapping = @{
                     @(BRTextFieldStyleDefault)          : @"configDefaultStyle",
                     @(BRTextFieldStyleClose)            : @"configCloseStyle",
-                    @(BRTextFieldStylePassword)        : @"configPasswordStyle",
+                    @(BRTextFieldStylePassword)         : @"configPasswordStyle",
                     @(BRTextFieldStyleVerifyCode)       : @"configVerifyCodeStyle",
                     @(BRTextFieldStyleInternational)    : @"configInternationalStyle"
                     };

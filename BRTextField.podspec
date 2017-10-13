@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BRTextField"
-  s.version      = "1.0.8"
+  s.version      = "0.0.1"
   s.summary      = "BRTextField is bearead custom textfield."
 
   # This description is used to generate tags and improve search results.
