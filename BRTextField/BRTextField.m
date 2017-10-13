@@ -14,7 +14,7 @@
 
 @interface BRTextField ()
 
-@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic, readwrite) UITextField *textField;
 @property (strong, nonatomic) UILabel     *lblFloat;
 @property (strong, nonatomic) UIView      *underlineView;
 

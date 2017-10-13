@@ -46,6 +46,8 @@ IB_DESIGNABLE
  The color for underline. default is nil. use opaque black
  */
 @property (nullable, nonatomic, strong) IBInspectable UIColor     *underlineColor;
+@property (nonatomic, strong, readonly) UITextField               *textField;
+
 @property (nullable, nonatomic, copy)IBInspectable   NSString      *placeholder;          // default is nil. string is drawn 70% gray
 @property (nullable, nonatomic, copy)IBInspectable   NSString      *text;                 // default is nil
 @property (nonatomic) NSTextAlignment    textAlignment;        // default is NSLeftTextAlignment
