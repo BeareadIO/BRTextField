@@ -220,6 +220,7 @@
 - (void)configVerifyCodeStyle {
     if (!self.supplyText) {
         self.lblSupply.text = @"获取验证码";
+        _supplyText = @"获取验证码";
     } else {
         self.lblSupply.text = self.supplyText;
     }
@@ -272,6 +273,7 @@
     
     if (!self.supplyText) {
         self.lblSupply.text = @"+86";
+        _supplyText = @"+86";
     } else {
         self.lblSupply.text = self.supplyText;
     }

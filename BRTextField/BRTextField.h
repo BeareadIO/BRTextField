@@ -26,7 +26,7 @@ IB_DESIGNABLE
  
  It will display an underline and a floating label.
  */
-@interface BRTextField : UIView
+@interface BRTextField : UIView<UITextFieldDelegate>
 
 @property (nullable, nonatomic, weak)   id<UITextFieldDelegate, BRTextFieldDelegate> delegate;             // default is nil. weak reference
 /**
