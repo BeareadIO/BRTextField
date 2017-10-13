@@ -36,6 +36,8 @@
 
 @implementation BRTextField
 
+@dynamic text;
+
 #pragma mark - Init
 
 - (instancetype)init {
@@ -437,7 +439,6 @@
 }
 
 - (void)setText:(NSString *)text {
-    _text = text;
     self.textField.text = text;
 }
 
@@ -515,6 +516,10 @@
 }
 
 #pragma mark - Getter
+- (NSString *)text {
+    return self.textField.text;
+}
+
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
